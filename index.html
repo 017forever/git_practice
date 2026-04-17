@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人首頁 | Professional Portfolio</title>
+    <style>
+        /* --- CSS 樣式開始 --- */
+        :root {
+            --primary-color: #2563eb;    /* 科技藍 */
+            --secondary-color: #64748b;  /* 冷色灰 */
+            --bg-color: #f8fafc;         /* 背景淺灰 */
+            --text-color: #1e293b;       /* 深色文字 */
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            scroll-behavior: smooth;
+        }
+
+        /* 導覽列 */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px); /* 現代感毛玻璃效果 */
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 視覺區塊 */
+        #hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+            text-align: center;
+            padding: 20px;
+        }
+
+        #hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        #hero img:hover {
+            transform: scale(1.05); /* 稍微放大效果 */
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* 內容區塊 */
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        /* 技能列表 Grid 排版 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .skills-grid li {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: #1e293b;
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        footer h2 {
+            border: none;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 手機版微調 */
+        @media (max-width: 600px) {
+            #hero h1 { font-size: 1.8rem; }
+            section { margin: 20px; }
+        }
+        /* --- CSS 樣式結束 --- */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#skills">專業技能</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" style="background: none; box-shadow: none; max-width: 100%;">
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="個人頭像">
+        <h1>你好，我是 [你的姓名]</h1>
+        <p>致力於打造卓越網頁體驗的前端工程師</p>
+    </section>
+
+    <section id="about">
+        <h2>關於我</h2>
+        <p>
+            你好！我是一位熱愛技術與設計的開發者。我喜歡解決複雜的問題，並將其轉化為簡單、美觀且直觀的介面。
+            目前專注於響應式網頁設計與使用者體驗（UX）的優化。
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>專業技能</h2>
+        <ul class="skills-grid">
+            <li>HTML5 / CSS3 / JavaScript</li>
+            <li>React / Vue 框架</li>
+            <li>UI/UX 設計思考</li>
+            <li>Git 版本控制</li>
+            <li>響應式網頁設計 (RWD)</li>
+            <li>性能優化 (Performance)</li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>對我的作品感興趣嗎？歡迎隨時聯繫我！</p>
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <div style="margin-top: 20px;">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">
+            &copy; 2026 [你的姓名]. Built with ❤️ and Code.
+        </p>
+    </footer>
+
+</body>
+</html>
